@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 				try {
 					Intent intent = new Intent(
 							"com.google.zxing.client.android.SCAN");
-					intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+					intent.putExtra("SCAN_MODE", "QR_CODE_MODE, ONE_D_MODE");
 					startActivityForResult(intent, 0);
 				} catch (Exception e) {
 					TextView textView = (TextView) findViewById(R.id.textView1);
