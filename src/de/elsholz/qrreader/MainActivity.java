@@ -21,10 +21,15 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(
-						"com.google.zxing.client.android.SCAN");
-				intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-				startActivityForResult(intent, 0);
+				try {
+					Intent intent = new Intent(
+							"com.google.zxing.client.android.SCAN");
+					intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+					startActivityForResult(intent, 0);
+				} catch (Exception e) {
+					TextView textView = (TextView) findViewById(R.id.textView1);
+					textView.setText("- Scan kann nicht gestartet werden -");
+				}
 			}
 		});
 	}
